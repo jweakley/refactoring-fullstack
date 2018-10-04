@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :invoice do
     rate_per_hour { 200.0 }
@@ -19,8 +21,8 @@ FactoryBot.define do
       payment_received { false }
     end
 
-    factory :billed_and_paid_invoice, traits: [:billed, :paid]
-    factory :unbilled_and_unpaid_invoice, traits: [:unbilled, :unpaid]
-    factory :billed_and_unpaid_invoice, traits: [:billed, :unpaid]
+    factory :billed_and_paid_invoice, traits: %i[billed paid]
+    factory :unbilled_and_unpaid_invoice, traits: %i[unbilled unpaid]
+    factory :billed_and_unpaid_invoice, traits: %i[billed unpaid]
   end
 end
